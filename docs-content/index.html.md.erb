@@ -1,5 +1,5 @@
 ---
-title: YOUR-PRODUCT-NAME (Beta)
+title: DataStax Enterprise for PCF (Beta)
 owner: Partners
 ---
 <style>
@@ -15,44 +15,24 @@ owner: Partners
 
 <p class="note warning">
 <strong>WARNING! </strong>
-The PRODUCT-NAME for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
+The DataStax Enterprise for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
 Do not use this product in a PCF production environment.
 </p>
 
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for PCF) does, 
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-This documentation describes the Apigee Edge Service Broker for Pivotal Cloud Foundry (PCF). The Apigee Edge Service 
-Broker for PCF enables developers to manage APIs for their PCF apps through the Apigee Edge management console.
-
-**Note**: This description will appear under **OVERVIEW** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
-
+This documentation describes the DataStax Enterprise for PCF (Beta) for Pivotal Cloud Foundry (PCF).  The DataStax Enterprise for PCF enables developers to provision a dedicated DataStax Enterprise (DSE) cluster on-demand to build cloud-scale applications.  
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to PCF developers. See below for an example.**
+The DataStax Enterprise for PCF (Beta) provides developers the capability to self-service a dedicated DataStax Enterprise (DSE) cluster on-demand.  In our current closed beta period, it exposes three service plans, namely sample-bronze-plan, sample-silver-plan, and sample-gold-plan.  PCF tile administrator can attach different virtual machine types to any of these plans.  Developers will create service plan instances using Cloud Foundry Command Line Interface (cf CLI) and bind them to their apps. 
 
-The Apigee Edge Service Broker for PCF registers a service broker with PCF and exposes its service plans on the 
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command 
-Line Interface (cf CLI) and bind them to their apps.
-
-Creating an Apigee Edge for PCF service instance and binding it to an app creates an Apigee Edge API proxy that 
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request 
-handling between clients and the app.
-
-**Note**: This overview will appear under **OVERVIEW**, combined with the description above in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+Creating a DataStax Enterprise for PCF service instance and binding it to an app creates a database connection from an app to a backend dedicated DataStax Enterprise cluster.  This lets developers use the connection to manipulate data residing on the dedicated DataStax Enterprise Cassandra NoSQL database cluster.
 
 ## <a id='features'></a>Key Features
 
-YOUR-PRODUCT-NAME includes the following key features:
+DataStax Enterprise for PCF (Beta) includes the following key features:
 
-* Feature one.
-* Feature two.
-* Feature three.
-
-**Note**: This feature list will appear under **FEATURES** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+* Self-provision a DataStax Enterprise (DSE) cluster on-demand with three different service plans.
+* Connect PCF apps to a dedicated DataStax Enteprirse (DSE) cluster.
+* Decommission a DataStax Enterprise (DSE) cluster.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -63,55 +43,44 @@ The following table provides version and version-support information about PRODU
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>vYOUR-VERSION-NUMBER</td>
+        <td>v0.1.17</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2017)</td>
+        <td>July 3, 2017</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>DataStax Enterprise 5.1</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.9.x and v1.10.x</td>
     </tr>
     <tr>
         <td>Compatible Elastic Runtime version(s)</td>
-        <td>vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.9.x and v1.10.x</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
-    </tr>
-    <tr>
-        <td>IPsec support?</td>
-        <td>[Yes or No]</td>
+        <td>AWS, GCP, and vSphere</td>
     </tr>
 </table>
 
-## <a id="reqs"></a>Requirements
-
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
-
-YOUR-PRODUCT-NAME has the following requirements:
-
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
-
 ## <a id="limitations"></a>Limitations
 
-**List any known limitations.**
+<p>The DataStax Enterprise for PCF (Beta) has the following limitations:</p>
+
+<ul>
+<li>It is for development purpose only.  Users will not receive general support from DataStax if their DataStax Entrprise clusters are provisioned using the DataStax Enterprise for PCF (Beta) during the beta period.</li>
+<li>The provisioned DataStax Enterprise (DSE) clusters do not provide DSE Search, DSE Analytics and DSE Graph features.</li>
+<li>Developers are limited to three different service plans.</li>
+<li>The DataStax Enterprise for PCF tile can be installed in a multi-AZs PCF environments.  However, it can only provision DataStax Enterprise cluster nodes in a single AZ domain.</li>
+<li>Maximum DataStax Enterprise cluster size is 40.</li>
+</ul>
 
 ## <a id="feedback"></a>Feedback
 
 Please provide any bugs, feature requests, or questions to the 
-[Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+[Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to <a href="mailto:partner-architecture@datastax.com">DataStax</a>.
 
-## <a id='license'></a>License
-
-**List any license information here.**

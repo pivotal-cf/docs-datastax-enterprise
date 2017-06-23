@@ -1,15 +1,50 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using DataStax Enterprise for PCF (Beta)
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use DataStax Enterprise for PCF (Beta).
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+You can create service instances of DataStax Enterprise for PCF (Beta) and bind them to apps using the Cloud Foundry Command-Line Interface (cf CLI).
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+Download an example app that uses DataStax Enterprise for PCF (Beta) <a href="https://github.com/mp911de/spring-music/tree/cassandra">here</a>
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. 
-If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
-[Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+##<a id='using'></a> Create a Service Instance
+
+Creating a service instance in PCF automatically spins up a dedicated DataStax Enterprise cluster based on user-selected service plan, create a DataStax Enterprise OpsCenter instance to manage the DataStax Enterprise cluster, and generate an associated user account in the DataStax Enterprise cluster to let the instance access the cluster. 
+
+The following procedures describe how to create a DataStax Enterprise for PCF (Beta) service instance with the cf CLI.
+
+1. Run <code>cf marketplace -s p-dse-cassandra-v1</code> to view the available service plans.  This should produce output like the following:
+![ALT-TEXT](cf_marketplace.png)
+ 
+1. Run <code>cf create-service SERVICE-NAME SERVICE-PLAN SERVICE-INSTANCE-NAME -c '{"cluster_size" : n}</code> to create a service instance where -c option for defining cluster size. SERVICE-INSTANCE-NAME can be any descriptive name you want to use for the service instance.  If you do not specify option -c for your cluster size, the service instance will create a 3-node DataStax Enterprise cluster with either the sample-bronze-plan or the sample-silver-plan.  The service instance will create a 5-node DataStax Enterprise cluster with the sample-gold-plan. This should produce ouput like the following:
+![ALT-TEXT](cf_create_service.png)
+
+##<a id='using'></a> Bind an App to a Service Instance
+
+The following procedures describe how to bind a DataStax Enterprise for PCF (Beta) service instance to a PCF app using the cf CLI.
+
+1. Run <code>cf service SERVICE-INSTANCE-NAME</code> to view your service instance. This should produce output like the following:
+![ALT-TEXT](cf_service_dse.png)
+
+1. Run <code>cf bind-service APP-NAME SERVICE-INSTANCE-NAME</code> to bind the application to the service instance.<br>
+![ALT-TEXT](cf_bind_service_dse.png)
+
+1. Restage your app. <br>
+![ALT-TEXT](cf_restage_app.png)
+
+##<a id='using'></a> Access DataStax Enterprise OpsCenter of a Service Instance
+
+The following procedures describe how to access DataStax Enterprise OpsCenter of a Service Instance.
+
+1. Run <code>cf env APP-NAME</code> to show all env variables for an app.  This should produce output like the following. 
+![ALT-TEXT](cf_env_opsc_creds.png)<br>
+* Point your browser at the OpsCenter's Login URL. For example, point your browser at **datastax-opscenter-40843970-e3a5-41c3-bc14-71ce04a00339.sys.pie-88.com/opscenter/login.html** if the **opscenter_url's** value is **datastax-opscenter-40843970-e3a5-41c3-bc14-71ce04a00339.sys.pie-88.com**.
+* Log in using **opscenter\_admin\_username** and the **opscenter\_admin\_password**.
+![ALT-TEXT](opsc_dashboard.png)
+
+##<a id='using'></a> Delete a Service Instance
+
+When you delete a DataStax Enterprise for PCF (Beta) service instance, the broker automatically unbinds all apps that are bound to that service and de-provision the DataStax Enterprise cluster associated with the service instance.
+
