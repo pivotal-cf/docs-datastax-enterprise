@@ -18,7 +18,7 @@ The following procedures describe how to create a DataStax Enterprise for PCF (B
 1. Run <code>cf marketplace -s p-dse-cassandra-v1</code> to view the available service plans.  This should produce output like the following:
 ![ALT-TEXT](cf_marketplace.png)
  
-1. Run <code>cf create-service SERVICE-NAME SERVICE-PLAN SERVICE-INSTANCE-NAME -c '{"cluster_size" : n}</code> to create a service instance where -c option for defining cluster size. SERVICE-INSTANCE-NAME can be any descriptive name you want to use for the service instance.  If you do not specify option -c for your cluster size, the service instance will create a 3-node DataStax Enterprise cluster with either the sample-bronze-plan or the sample-silver-plan.  The service instance will create a 5-node DataStax Enterprise cluster with the sample-gold-plan. This should produce ouput like the following:
+1. Run <code>cf create-service SERVICE-NAME SERVICE-PLAN SERVICE-INSTANCE-NAME -c '{"cluster_size" : n}</code> to create a service instance where -c option for defining cluster size. SERVICE-INSTANCE-NAME can be any descriptive name you want to use for the service instance.  If you do not specify -c option for your cluster size, the service instance will create a 3-node DataStax Enterprise cluster with either the sample-bronze-plan or the sample-silver-plan.  The service instance will create a 5-node DataStax Enterprise cluster with the sample-gold-plan. This should produce ouput like the following:
 ![ALT-TEXT](cf_create_service.png)
 
 ##<a id='using'></a> Bind an App to a Service Instance
