@@ -1,0 +1,20 @@
+---
+:archive_menu:
+  ".": 
+:production_host: hello
+:subnav_templates:
+  datastax-cassandra: datastax-cassandra_subnav
+:template_variables: 
+:local_repo_dir: "/Users/gilbertlau/Documents/GitHub/docs-datastax-cassandra"
+:workspace: !ruby/object:Pathname
+  path: "/Users/gilbertlau/Documents/GitHub/docs-datastax-cassandra/docs-book/output/master_middleman/source"
+:feedback_enabled: 
+:repo_link_enabled: true
+:repo_links:
+  datastax-cassandra:
+    repo: docs-content
+    ref: master
+    at_path: 
+:product_info:
+  datastax-cassandra: {}
+:elastic_search: false
