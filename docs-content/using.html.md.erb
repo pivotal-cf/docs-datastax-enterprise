@@ -3,35 +3,35 @@ title: Using DataStax Enterprise for PCF (Beta)
 owner: Partners
 ---
 
-This topic describes how to use DataStax Enterprise for PCF (Beta).
+This topic describes how to use DataStax Enterprise for Pivotal Cloud Foundry (PCF).
 
-You can create service instances of DataStax Enterprise for PCF (Beta) and bind them to apps using the Cloud Foundry Command-Line Interface (cf CLI).
+You can create service instances of DataStax Enterprise for PCF and bind them to apps using the Cloud Foundry Command-Line Interface (cf CLI).
 
-Download an example app that uses DataStax Enterprise for PCF (Beta) <a href="https://github.com/mp911de/spring-music/tree/cassandra">here</a>.
+Download an example app that uses DataStax Enterprise for PCF <a href="https://github.com/mp911de/spring-music/tree/cassandra">here</a>.
 
 ##<a id='using'></a> Create a Service Instance
 
 Creating a service instance in PCF automatically does the following:
 
-  * Spins up a dedicated DataStax Enterprise cluster based on the user-selected service plan.
-  * Creates a DataStax Enterprise OpsCenter instance to manage the DataStax Enterprise cluster.
-  * Generates an associated user account in the DataStax Enterprise cluster to let the instance access the cluster. 
+  * Spins up a dedicated DataStax Enterprise (DSE) cluster based on the user-selected service plan.
+  * Creates a DataStax Enterprise OpsCenter instance to manage the DSE cluster.
+  * Generates an associated user account in the DSE cluster to let the instance access the cluster. 
 
-The following procedures describe how to create a DataStax Enterprise for PCF (Beta) service instance with the cf CLI.
+The following procedures describe how to create a DataStax Enterprise for PCF service instance with the cf CLI.
 
 1. Run `cf marketplace -s p-dse-cassandra-v1` to view the available service plans:
 ![dse-cassandra in cf marketplace](cf_marketplace.png)
  
 1. Run `cf create-service SERVICE-NAME SERVICE-PLAN SERVICE-INSTANCE-NAME -c '{"cluster_size" : n}` to create a service instance where:
   * The `-c` option defines the cluster size. If you skip the `-c` option, the service instance defaults as follows:
-      - A 3-node DataStax Enterprise cluster for the `sample-bronze-plan` or  `sample-silver-plan`
-      - A 5-node DataStax Enterprise cluster for the `sample-gold-plan`
+      - A 3-node DSE cluster for the `sample-bronze-plan` or  `sample-silver-plan`
+      - A 5-node DSE cluster for the `sample-gold-plan`
   * `SERVICE-INSTANCE-NAME` can be any descriptive name you want to use for the service instance.
   ![ALT-TEXT](cf_create_service.png)
 
 ##<a id='using'></a> Bind an App to a Service Instance
 
-To bind a DataStax Enterprise for PCF (Beta) service instance to a PCF app using the cf CLI:
+To bind a DataStax Enterprise for PCF service instance to a PCF app using the cf CLI:
 
 1. Run `cf service SERVICE-INSTANCE-NAME` to view your service instance:  
 ![cf service dse-cassandra-instance](cf_service_dse.png)
@@ -47,15 +47,18 @@ To bind a DataStax Enterprise for PCF (Beta) service instance to a PCF app using
 To access the OpsCenter dashboard for a DataStax Enterprise for PCF service instance:
 
 1. Run `cf env APP-NAME` to show all environment variables for an app: 
-![cf env](cf_env_opsc_creds.png)<br>
 
-1. Browse to the OpsCenter's login URL listed as `opscenter_url` in the output from `cf env`. For example, `datastax-opscenter-40843970-e3a5-41c3-bc14-71ce04a00339.sys.pie-88.com/opscenter/login.html`.
+    ![cf env](cf_env_opsc_creds.png)
 
-1. Log into the OpsCenter dashboard using the `opscenter_admin_username` and `opscenter_admin_password` values listed in the `cf env` output.
+1. Browse to the OpsCenter's login URL listed as `opscenter_url` in the output from `cf env`.
+   For example, `datastax-opscenter-40843970-e3a5-41c3-bc14-71ce04a00339.sys.pie-88.com/opscenter/login.html`
+
+1. Log in to the OpsCenter dashboard using the `opscenter_admin_username` and `opscenter_admin_password` values listed in the `cf env` output.
 ![DataStax OpsCenter dashboard](opsc_dashboard.png)
 
 ##<a id='using'></a> Delete a Service Instance
 
-Run `cf delete-service SERVICE-INSTANCE-NAME` to delete an instance of the DataStax Enterprise for PCF (Beta) service.
+Run `cf delete-service SERVICE-INSTANCE-NAME` to delete an instance of the DataStax Enterprise for PCF service.
 
-When you delete a service instance, the broker automatically unbinds all apps that are bound to that service and de-provisions the DataStax Enterprise cluster associated with the service instance.
+When you delete a service instance, the broker automatically unbinds all apps that are bound to that service
+and de-provisions the DSE cluster associated with the service instance.
