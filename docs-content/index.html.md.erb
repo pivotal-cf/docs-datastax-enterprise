@@ -22,16 +22,16 @@ Do not use this product in a PCF production environment.
 This documentation describes the DataStax Enterprise for PCF (Beta) for Pivotal Cloud Foundry (PCF).  The DataStax Enterprise for PCF enables developers to provision a dedicated DataStax Enterprise (DSE) cluster on-demand to build cloud-scale applications.  
 ## <a id='overview'></a>Overview
 
-The DataStax Enterprise for PCF (Beta) provides developers the capability to self-service a dedicated DataStax Enterprise (DSE) cluster on-demand.  In our current closed beta period, it exposes three service plans, namely sample-bronze-plan, sample-silver-plan, and sample-gold-plan.  PCF tile administrator can attach different virtual machine types to any of these plans.  Developers will create service plan instances using Cloud Foundry Command Line Interface (cf CLI) and bind them to their apps. 
+DataStax Enterprise for PCF (Beta) enables app developers to create a dedicated DataStax Enterprise (DSE) cluster to serve their apps.  In its current closed beta period, the DataStax Enterprise for PCF service offers three plans: `sample-bronze-plan`, `sample-silver-plan`, and `sample-gold-plan`.  PCF tile administrators can associate different virtual machine types to each plan.  Developers can then use the Cloud Foundry Command Line Interface (cf CLI) to create dedicated instances of the service plans and bind the instances to their apps.
 
-Creating a DataStax Enterprise for PCF service instance and binding it to an app creates a database connection from an app to a backend dedicated DataStax Enterprise cluster.  This lets developers use the connection to manipulate data residing on the dedicated DataStax Enterprise Cassandra NoSQL database cluster.
+Creating a DataStax Enterprise for PCF (Beta) service instance and binding it to an app creates a database connection from an app to a backend dedicated DataStax Enterprise cluster.  This lets developers use the connection to manipulate data residing on the dedicated DataStax Enterprise Cassandra NoSQL database cluster.
 
 ## <a id='features'></a>Key Features
 
-DataStax Enterprise for PCF (Beta) includes the following key features:
+DataStax Enterprise for PCF (Beta) lets PCF developers:
 
-* Self-provision a DataStax Enterprise (DSE) cluster on-demand with three different service plans.
-* Connect PCF apps to a dedicated DataStax Enteprirse (DSE) cluster.
+* Self-provision a DataStax Enterprise (DSE) cluster on-demand from three different service plans.
+* Connect PCF apps to a dedicated DataStax Enterprise (DSE) cluster.
 * Decommission a DataStax Enterprise (DSE) cluster.
 
 ## <a id="snapshot"></a>Product Snapshot
@@ -72,10 +72,10 @@ The following table provides version and version-support information about PRODU
 <p>The DataStax Enterprise for PCF (Beta) has the following limitations:</p>
 
 <ul>
-<li>It is for development purpose only.  Users will not receive general support from DataStax if their DataStax Entrprise clusters are provisioned using the DataStax Enterprise for PCF (Beta) during the beta period.</li>
+<li>It is for development purposes only.  Users will not receive general support from DataStax if their DataStax Entrprise clusters are provisioned using the DataStax Enterprise for PCF (Beta) during the beta period.</li>
 <li>The provisioned DataStax Enterprise (DSE) clusters do not provide DSE Search, DSE Analytics and DSE Graph features.</li>
-<li>Developers are limited to three different service plans.</li>
-<li>The DataStax Enterprise for PCF tile can be installed in a multi-AZs PCF environments.  However, it can only provision DataStax Enterprise cluster nodes in a single AZ domain.</li>
+<li>Developers are limited to three service plans.</li>
+<li>The DataStax Enterprise for PCF tile can be installed in PCF deployments that run in multiple Availability Zones (AZs).  However, the DataStax Enterprise service can only provision cluster nodes within a single AZ.</li>
 <li>Maximum DataStax Enterprise cluster size is 40.</li>
 </ul>
 
