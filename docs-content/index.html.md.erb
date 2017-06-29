@@ -15,20 +15,27 @@ owner: Partners
 
 <p class="note warning">
 <strong>WARNING! </strong>
-The DataStax Enterprise (DSE) for Pivotal Cloud Foundry (PCF) tile is currently a closed beta delivery designed for test and evaluation only.  It is not intended for production environments.
+The DataStax Enterprise (DSE) for Pivotal Cloud Foundry (PCF) tile is currently a closed beta delivery designed for test and evaluation only.
+It is not intended for production environments.
 </p>
 
 ## <a id='overview'></a>Overview
 
-DSE is the always-on data platform for cloud applications that is powered by Apache Cassandra.  This documentation describes the DSE for PCF tile. The tile enables developers to automatically provision a dedicated DSE cluster on-demand to build cloud-scale applications.  In its current closed beta period, the DSE for PCF service offers three plans:
+DSE is the always-on data platform for cloud applications that is powered by Apache Cassandra.
+This documentation describes the DSE for PCF tile.
+The tile enables developers to automatically provision a dedicated DSE cluster on-demand to build cloud-scale applications.
+In its current closed beta period, the DSE for PCF service offers three plans:
 
 + sample-bronze-plan
 + sample-silver-plan
 + sample-gold-plan
 
-PCF tile administrators can associate different VM types to each plan.  Developers can then use the Cloud Foundry Command Line Interface (cf CLI) to create dedicated instances of the service plans and bind the instances to their apps.
+PCF tile administrators can associate different VM types to each plan.
+Developers can then use the Cloud Foundry Command Line Interface (cf CLI) to create dedicated instances
+of the service plans and bind the instances to their apps.
 
-Creating a DataStax Enterprise for PCF service instance and binding it to an app creates a database connection from the app to a backend dedicated DSE cluster. This lets developers use the connection to manipulate data residing in the Cassandra NoSQL database cluster.  
+Creating a DataStax Enterprise for PCF service instance and binding it to an app creates a database connection from the app to a backend dedicated DSE cluster.
+This lets developers use the connection to manipulate data residing in the Cassandra NoSQL database cluster.  
 
 ## <a id='features'></a>Key Features
 
@@ -76,7 +83,8 @@ The following table provides version and version-support information about DataS
 <p>The DataStax Enterprise for PCF has the following limitations:</p>
 
 <ul>
-<li>The tile is for development purposes only. Users will not receive DataStax engineering support for clusters that are provisioned using the DataStax Enterprise for PCF during the beta period.</li>
+<li>The tile is for development purposes only.
+    Users will not receive DataStax engineering support for clusters that are provisioned using the DataStax Enterprise for PCF during the beta period.</li>
 <li>The provisioned DSE clusters do not provide DSE Search, DSE Analytics, and DSE Graph features.</li>
 <li>Developers are limited to three service plans.</li>
 <li>The DataStax Enterprise for PCF tile can be installed in PCF deployments that run in multiple Availability Zones (AZs).
