@@ -5,9 +5,9 @@
 :subnav_templates:
   datastax-cassandra: datastax-cassandra_subnav
 :template_variables: 
-:local_repo_dir: "/Users/gilbertlau/Documents/GitHub/docs-datastax-cassandra"
+:local_repo_dir: "/Users/pspinrad/workspace/docs-datastax-cassandra"
 :workspace: !ruby/object:Pathname
-  path: "/Users/gilbertlau/Documents/GitHub/docs-datastax-cassandra/docs-book/output/master_middleman/source"
+  path: "/Users/pspinrad/workspace/docs-datastax-cassandra/docs-book/output/master_middleman/source"
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:
