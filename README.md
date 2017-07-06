@@ -1,3 +1,10 @@
+The name of this product is:
+
++ DataStax Enterprise Service Broker for PCF (if Pivotal Cloud Foundry has been spelled out above in body text)
++ DataStax Enterprise Service Broker for Pivotal Cloud Foundry (first use of Pivotal Cloud Foundry in body text on a page)
+The doc is published to https://docs.pivotal.io/partners/datastax-service-broker/index.html
+
+
 ## Pivotal Cloud Foundry Partners Template
 
 This template helps partners prepare documentation for Pivotal Cloud Foundry (PCF) partner services that appear on [Pivotal Network](https://network.pivotal.io/). 
