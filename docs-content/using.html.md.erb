@@ -24,8 +24,8 @@ The following procedures describe how to create a DataStax Enterprise for PCF se
  
 1. Run `cf create-service SERVICE-NAME SERVICE-PLAN SERVICE-INSTANCE-NAME -c '{"cluster_size" : n}` to create a service instance where:
   * The `-c` option defines the cluster size. If you skip the `-c` option, the service instance defaults as follows:
-      - A 3-node DSE cluster for the `sample-bronze-plan` or  `sample-silver-plan`
-      - A 5-node DSE cluster for the `sample-gold-plan`
+      - A 3-node DSE cluster for the `sample-bronze-plan`
+      - A 5-node DSE cluster for the `sample-silver-plan` or  `sample-gold-plan`
   * `SERVICE-INSTANCE-NAME` can be any descriptive name you want to use for the service instance.
   ![ALT-TEXT](cf_create_service.png)
 
