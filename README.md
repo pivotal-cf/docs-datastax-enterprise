@@ -1,3 +1,5 @@
+## Tile Retired from Pivotal Network. This Documentation Repo is now obsolete.
+
 The name of this product is:
 
 + DataStax Enterprise Service Broker for PCF (if Pivotal Cloud Foundry has been spelled out above in body text)
